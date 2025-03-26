@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTA.
 
 namespace DTA.LinkedList
 {
@@ -20,7 +19,7 @@ namespace DTA.LinkedList
             //assign data to the new node
             newNode.Data = data;
             //assing new head to the next node
-            First = newNode.Next;
+            newNode.Next = First;
             First = newNode;
         }
 
@@ -28,11 +27,11 @@ namespace DTA.LinkedList
 
         public void DisplayList ()
         {
-            Node Current = First;
-            while (Current != null)
+            Node current = First;
+            while (current != null)
             {
-                Current.DisplayNode();
-                Current = Current.Next;
+                current.DisplayNode();
+                current = current.Next;
             }
         }
 
@@ -47,5 +46,20 @@ namespace DTA.LinkedList
            
             return temp;
         }
+
+        public void InsertLast(int data)
+        {
+            Node current = First;
+            while(current.Next != null)
+            {
+                current = current.Next;
+            }
+
+            Node newNode = new Node();
+            newNode.Data = data;
+
+            current.Next = newNode;
+        }
+
     }
 }
