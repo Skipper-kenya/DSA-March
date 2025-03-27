@@ -11,7 +11,7 @@ namespace DTA.LinkedList
         public Node? First { get; set; }
 
         //inserts a new node to a linked list
-
+        //
         public void insertFirst(int data)
         {
             //create a node
@@ -22,7 +22,7 @@ namespace DTA.LinkedList
             newNode.Next = First;
             First = newNode;
         }
-
+        //
         //iteration of the linked list
 
         public void DisplayList ()
